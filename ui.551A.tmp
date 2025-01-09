@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://btpieedxfv8tm"]
+
+[ext_resource type="Script" path="res://FlowContainer.gd" id="1_bmuh7"]
+
+[node name="Inventory" type="CanvasLayer"]
+
+[node name="Panel" type="Panel" parent="."]
+offset_top = 512.0
+offset_right = 576.0
+offset_bottom = 1024.0
+
+[node name="FlowContainer" type="FlowContainer" parent="Panel"]
+layout_mode = 0
+offset_right = 576.0
+offset_bottom = 504.0
+script = ExtResource("1_bmuh7")

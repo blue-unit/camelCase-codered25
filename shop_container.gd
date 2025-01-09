@@ -5,6 +5,6 @@ extends FlowContainer
 func _ready():
 	for i in range(19):
 		var shop_panel_instance = shop_panel.instantiate()
-		shop_panel_instance.spr("res://sprites/tiles/",i)
+		shop_panel_instance.spr("res://sprites/tiles/",i,0)
 		add_child(shop_panel_instance)
 

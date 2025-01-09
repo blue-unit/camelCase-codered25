@@ -8,16 +8,16 @@ extends CanvasLayer
 
 
 #buttons
-@onready var shop_button = $Panel/HBoxContainer/Panel/Shop
-@onready var home_button = $Panel/HBoxContainer/Panel2/Home
-@onready var inv_button = $Panel/HBoxContainer/Panel3/Inventory
+@onready var shop_button = $HBoxContainer/Panel/Shop
+@onready var home_button = $HBoxContainer/Panel2/Home
+@onready var inv_button = $HBoxContainer/Panel3/Inventory
 
 #buttons icon
 var shop_icon1 = load("res://sprites/icons/shop.png")
 var shop_icon2 = load("res://sprites/icons/shop_open.png")
 
 #button texture
-@onready var shop_texture = $Panel/HBoxContainer/Panel/Sprite2D
+@onready var shop_texture = $HBoxContainer/Panel/Sprite2D
 
 var shop = false
 var home = true

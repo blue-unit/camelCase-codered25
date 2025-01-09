@@ -5,20 +5,18 @@
 
 [node name="TilePanel" type="Panel"]
 custom_minimum_size = Vector2(40, 60)
-offset_right = 40.0
-offset_bottom = 63.0
+offset_right = 83.0
+offset_bottom = 115.0
 script = ExtResource("1_7dtif")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(15, 15)
 texture = ExtResource("2_nlv3k")
-offset = Vector2(5, 5)
+offset = Vector2(22, 22)
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_top = 36.0
-offset_right = 40.0
-offset_bottom = 59.0
-horizontal_alignment = 1
+offset_top = 66.0
+offset_right = 83.0
+offset_bottom = 91.0
 
 [connection signal="gui_input" from="." to="." method="_on_gui_input"]

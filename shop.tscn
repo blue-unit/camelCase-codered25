@@ -14,29 +14,28 @@ grow_vertical = 2
 
 [node name="Panel" type="Panel" parent="Panel"]
 layout_mode = 0
-offset_right = 576.0
-offset_bottom = 302.0
+offset_right = 540.0
+offset_bottom = 365.0
 
 [node name="shop" type="FlowContainer" parent="Panel/Panel"]
 layout_mode = 2
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_right = -40.0
-offset_bottom = -20.0
+offset_top = 108.0
+offset_bottom = 182.5
 script = ExtResource("1_mledm")
 
 [node name="Panel2" type="Panel" parent="Panel"]
 layout_mode = 0
-offset_top = 302.0
-offset_right = 576.0
-offset_bottom = 659.0
+offset_top = 365.0
+offset_right = 540.0
+offset_bottom = 960.0
 
 [node name="layer1_tiles_shop" type="FlowContainer" parent="Panel/Panel2"]
 layout_mode = 2
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.811
-offset_top = -20.0
-offset_right = -40.0
-offset_bottom = -32.44
+offset_top = -297.5
+offset_bottom = 72.352
 script = ExtResource("1_lokwb")

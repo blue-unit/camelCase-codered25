@@ -1,16 +1,37 @@
-[gd_scene load_steps=2 format=3 uid="uid://btpieedxfv8tm"]
+[gd_scene load_steps=5 format=3 uid="uid://btpieedxfv8tm"]
 
 [ext_resource type="Script" path="res://FlowContainer.gd" id="1_bmuh7"]
+[ext_resource type="Script" path="res://shovel.gd" id="2_a7qqt"]
+[ext_resource type="Texture2D" uid="uid://cde4n16thqrxb" path="res://sprites/icons/Showel.png" id="3_6d2bh"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mpyov"]
+radius = 517.21
 
 [node name="Inventory" type="CanvasLayer"]
 
 [node name="Panel" type="Panel" parent="."]
-offset_top = 512.0
-offset_right = 576.0
-offset_bottom = 1024.0
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -51.0
+offset_right = 540.0
+offset_bottom = 483.0
+grow_vertical = 2
 
 [node name="FlowContainer" type="FlowContainer" parent="Panel"]
 layout_mode = 0
-offset_right = 576.0
-offset_bottom = 504.0
+offset_right = 540.0
+offset_bottom = 552.0
 script = ExtResource("1_bmuh7")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="."]
+position = Vector2(485, 373)
+scale = Vector2(0.127, 0.123)
+shape = SubResource("CircleShape2D_mpyov")
+script = ExtResource("2_a7qqt")
+
+[node name="Sprite2D" type="Sprite2D" parent="TouchScreenButton"]
+position = Vector2(-3.84473e-06, 0)
+texture = ExtResource("3_6d2bh")
+
+[connection signal="released" from="TouchScreenButton" to="TouchScreenButton" method="_on_released"]

@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://b3nt8wxh1e0d7"]
+
+[ext_resource type="Script" path="res://tile.gd" id="1_7dtif"]
+[ext_resource type="Texture2D" uid="uid://dji68d6rvfxyv" path="res://sprites/tiles/0.png" id="2_nlv3k"]
+
+[node name="TilePanel" type="Panel"]
+custom_minimum_size = Vector2(40, 60)
+offset_right = 40.0
+offset_bottom = 63.0
+script = ExtResource("1_7dtif")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(15, 15)
+texture = ExtResource("2_nlv3k")
+offset = Vector2(5, 5)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_top = 36.0
+offset_right = 40.0
+offset_bottom = 59.0
+horizontal_alignment = 1
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]

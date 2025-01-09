@@ -1,0 +1,74 @@
+[gd_scene load_steps=7 format=3 uid="uid://dx1itp3kt04w3"]
+
+[ext_resource type="Script" path="res://UI.gd" id="1_wqcf6"]
+[ext_resource type="Texture2D" uid="uid://bqlc1j0rbnpxr" path="res://sprites/icons/shop.png" id="2_3wub4"]
+[ext_resource type="Texture2D" uid="uid://cr1k8hl6q7m14" path="res://sprites/icons/home.png" id="4_sfew1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4u7cv"]
+size = Vector2(256, 256)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k8qbu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qrf8u"]
+size = Vector2(192, 62)
+
+[node name="Basic UI" type="CanvasLayer"]
+script = ExtResource("1_wqcf6")
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = -1
+anchor_right = 0.565
+anchor_bottom = 0.25
+offset_top = 869.0
+offset_right = 250.56
+offset_bottom = 768.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.863
+anchor_right = 1.0
+anchor_bottom = 0.994
+offset_top = -133.765
+offset_bottom = 0.929993
+
+[node name="Panel" type="Panel" parent="Panel/HBoxContainer"]
+custom_minimum_size = Vector2(192, 155)
+layout_mode = 2
+
+[node name="Shop" type="TouchScreenButton" parent="Panel/HBoxContainer/Panel"]
+position = Vector2(97, 80)
+scale = Vector2(0.75, 0.609375)
+shape = SubResource("RectangleShape2D_4u7cv")
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel/HBoxContainer/Panel"]
+position = Vector2(97, 80)
+scale = Vector2(0.636719, 0.542969)
+texture = ExtResource("2_3wub4")
+
+[node name="Panel2" type="Panel" parent="Panel/HBoxContainer"]
+custom_minimum_size = Vector2(192, 0)
+layout_mode = 2
+
+[node name="Home" type="TouchScreenButton" parent="Panel/HBoxContainer/Panel2"]
+position = Vector2(96, 80)
+scale = Vector2(9.8, 8)
+shape = SubResource("RectangleShape2D_k8qbu")
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel/HBoxContainer/Panel2"]
+position = Vector2(96, 80)
+scale = Vector2(0.6875, 0.648438)
+texture = ExtResource("4_sfew1")
+
+[node name="Panel3" type="Panel" parent="Panel/HBoxContainer"]
+custom_minimum_size = Vector2(192, 0)
+layout_mode = 2
+
+[node name="Inventory" type="TouchScreenButton" parent="Panel/HBoxContainer/Panel3"]
+position = Vector2(96, 80)
+scale = Vector2(1, 2.6)
+shape = SubResource("RectangleShape2D_qrf8u")
+
+[connection signal="released" from="Panel/HBoxContainer/Panel/Shop" to="." method="_on_shop_released"]
+[connection signal="released" from="Panel/HBoxContainer/Panel2/Home" to="." method="_on_home_released"]
+[connection signal="released" from="Panel/HBoxContainer/Panel3/Inventory" to="." method="_on_inventory_released"]

@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://3itsbdsguquv"]
+
+[ext_resource type="Script" path="res://shop_panel.gd" id="1_iehfn"]
+
+[node name="shop_panel" type="Panel"]
+custom_minimum_size = Vector2(40, 40)
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_iehfn")
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]

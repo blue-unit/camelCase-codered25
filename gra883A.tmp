@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://b3nt8wxh1e0d7"]
+
+[ext_resource type="Script" path="res://tile.gd" id="1_0x2ls"]
+[ext_resource type="Texture2D" uid="uid://1m87p5mtembl" path="res://sprites/tile_grass.png" id="1_q0nat"]
+
+[node name="grassTilePanel" type="Panel"]
+custom_minimum_size = Vector2(40, 40)
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_0x2ls")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(20, 21)
+texture = ExtResource("1_q0nat")
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]

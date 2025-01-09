@@ -1,0 +1,42 @@
+[gd_scene load_steps=3 format=3 uid="uid://bti6gplfjb1ef"]
+
+[ext_resource type="Script" path="res://layer1_tiles_shop.gd" id="1_lokwb"]
+[ext_resource type="Script" path="res://shop_container.gd" id="1_mledm"]
+
+[node name="Shop" type="CanvasLayer"]
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="Panel"]
+layout_mode = 0
+offset_right = 576.0
+offset_bottom = 302.0
+
+[node name="shop" type="FlowContainer" parent="Panel/Panel"]
+layout_mode = 2
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_right = -40.0
+offset_bottom = -20.0
+script = ExtResource("1_mledm")
+
+[node name="Panel2" type="Panel" parent="Panel"]
+layout_mode = 0
+offset_top = 302.0
+offset_right = 576.0
+offset_bottom = 659.0
+
+[node name="layer1_tiles_shop" type="FlowContainer" parent="Panel/Panel2"]
+layout_mode = 2
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.811
+offset_top = -20.0
+offset_right = -40.0
+offset_bottom = -32.44
+script = ExtResource("1_lokwb")

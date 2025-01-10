@@ -53,9 +53,6 @@ func savepoints(pt):
 func loadpoints():
 	var point = FileAccess.open("res://save/pts.data", FileAccess.READ)
 	var pt = point.get_var()
-	if pt == null:
-		pt = 50000
-		savepoints(pt)
 	point.close()
 	return pt
 	

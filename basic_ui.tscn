@@ -1,10 +1,17 @@
-[gd_scene load_steps=9 format=3 uid="uid://dx1itp3kt04w3"]
+[gd_scene load_steps=19 format=3 uid="uid://dx1itp3kt04w3"]
 
 [ext_resource type="Script" path="res://UI.gd" id="1_wqcf6"]
 [ext_resource type="Texture2D" uid="uid://bqlc1j0rbnpxr" path="res://sprites/icons/shop.png" id="2_3wub4"]
 [ext_resource type="Texture2D" uid="uid://ds584rdb0q7et" path="res://sprites/icons/inv.png" id="4_e5w1b"]
 [ext_resource type="Texture2D" uid="uid://cr1k8hl6q7m14" path="res://sprites/icons/home.png" id="4_sfew1"]
 [ext_resource type="Script" path="res://points.gd" id="5_6742j"]
+[ext_resource type="Texture2D" uid="uid://bo3luiy78ucsu" path="res://sprites/icons/WateringCan.png" id="6_p16s2"]
+[ext_resource type="Script" path="res://Timer.gd" id="7_pooa7"]
+[ext_resource type="Texture2D" uid="uid://c0p2m3qfogahp" path="res://sprites/icons/camera.png" id="8_60k1k"]
+[ext_resource type="Script" path="res://commute.gd" id="9_ry7aq"]
+[ext_resource type="Script" path="res://Timer2.gd" id="10_xvq0q"]
+[ext_resource type="Texture2D" uid="uid://b6pwdqu8xfu4j" path="res://sprites/icons/community.png" id="11_s281x"]
+[ext_resource type="Texture2D" uid="uid://cuixkg3xwlrxl" path="res://sprites/icons/leaderboard.png" id="12_w52qy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4u7cv"]
 size = Vector2(256, 350)
@@ -13,6 +20,25 @@ size = Vector2(256, 350)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qrf8u"]
 size = Vector2(192, 62)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jhjsa"]
+size = Vector2(300, 100)
+
+[sub_resource type="GDScript" id="GDScript_oetnm"]
+script/source = "extends Button
+
+@onready var timer = $\"../Timer\"
+@onready var saver = get_parent().get_child(1)
+
+func _on_button_up():
+	timer.start()
+	saver.purchase(-400)
+	self.disabled = true
+
+"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_q3sra"]
+radius = 60.0
 
 [node name="Basic UI" type="CanvasLayer"]
 script = ExtResource("1_wqcf6")
@@ -75,6 +101,92 @@ offset_right = 533.0
 offset_bottom = 73.0
 script = ExtResource("5_6742j")
 
+[node name="Profile" type="Panel" parent="."]
+offset_top = -1.0
+offset_right = 260.0
+offset_bottom = 73.0
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="Profile"]
+position = Vector2(110, 23)
+shape = SubResource("RectangleShape2D_jhjsa")
+shape_centered = false
+
+[node name="Avatar" type="Sprite2D" parent="Profile"]
+
+[node name="Step_counter" type="Panel" parent="."]
+offset_top = 123.0
+offset_right = 234.0
+offset_bottom = 163.0
+
+[node name="Label" type="Label" parent="Step_counter"]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 8.0
+offset_right = 259.0
+offset_bottom = 31.0
+text = "Steps Today: 4826"
+
+[node name="water" type="Button" parent="."]
+offset_top = 562.0
+offset_right = 108.0
+offset_bottom = 670.0
+icon = ExtResource("6_p16s2")
+script = SubResource("GDScript_oetnm")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+script = ExtResource("7_pooa7")
+
+[node name="timer_countdown" type="Label" parent="."]
+anchors_preset = -1
+anchor_bottom = 0.012
+offset_top = 612.0
+offset_right = 110.0
+offset_bottom = 623.48
+
+[node name="commute" type="Button" parent="."]
+anchors_preset = -1
+anchor_right = 0.046
+anchor_bottom = 0.044
+offset_left = 434.0
+offset_top = 562.0
+offset_right = 517.16
+offset_bottom = 627.76
+icon = ExtResource("8_60k1k")
+script = ExtResource("9_ry7aq")
+
+[node name="Timer2" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+script = ExtResource("10_xvq0q")
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 459.0
+offset_top = 612.0
+offset_right = 533.0
+offset_bottom = 635.0
+
+[node name="Community" type="TouchScreenButton" parent="."]
+position = Vector2(449, 201)
+texture_normal = ExtResource("11_s281x")
+shape = SubResource("CircleShape2D_q3sra")
+
+[node name="Panel" type="Panel" parent="."]
+visible = false
+offset_right = 540.0
+offset_bottom = 687.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel"]
+position = Vector2(279, 300)
+scale = Vector2(0.559167, 0.5775)
+texture = ExtResource("12_w52qy")
+
 [connection signal="released" from="HBoxContainer/Panel/Shop" to="." method="_on_shop_released"]
 [connection signal="released" from="HBoxContainer/Panel2/Home" to="." method="_on_home_released"]
 [connection signal="released" from="HBoxContainer/Panel3/Inventory" to="." method="_on_inventory_released"]
+[connection signal="button_up" from="water" to="water" method="_on_button_up"]
+[connection signal="timeout" from="Timer" to="Timer" method="_on_timeout"]
+[connection signal="button_up" from="commute" to="commute" method="_on_button_up"]
+[connection signal="timeout" from="Timer2" to="Timer2" method="_on_timeout"]
+[connection signal="released" from="Community" to="." method="_on_community_released"]

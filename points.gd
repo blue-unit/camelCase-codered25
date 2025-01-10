@@ -14,3 +14,4 @@ func purchase(val):
 func reload():
 	var pts = data.loadpoints()
 	return pts
+

@@ -1,10 +1,11 @@
-[gd_scene load_steps=19 format=3 uid="uid://dx1itp3kt04w3"]
+[gd_scene load_steps=25 format=3 uid="uid://dx1itp3kt04w3"]
 
 [ext_resource type="Script" path="res://UI.gd" id="1_wqcf6"]
 [ext_resource type="Texture2D" uid="uid://bqlc1j0rbnpxr" path="res://sprites/icons/shop.png" id="2_3wub4"]
 [ext_resource type="Texture2D" uid="uid://ds584rdb0q7et" path="res://sprites/icons/inv.png" id="4_e5w1b"]
 [ext_resource type="Texture2D" uid="uid://cr1k8hl6q7m14" path="res://sprites/icons/home.png" id="4_sfew1"]
 [ext_resource type="Script" path="res://points.gd" id="5_6742j"]
+[ext_resource type="Texture2D" uid="uid://d1ji2m6k1xscs" path="res://sprites/icons/1.png" id="6_kjmxx"]
 [ext_resource type="Texture2D" uid="uid://bo3luiy78ucsu" path="res://sprites/icons/WateringCan.png" id="6_p16s2"]
 [ext_resource type="Script" path="res://Timer.gd" id="7_pooa7"]
 [ext_resource type="Texture2D" uid="uid://c0p2m3qfogahp" path="res://sprites/icons/camera.png" id="8_60k1k"]
@@ -12,6 +13,11 @@
 [ext_resource type="Script" path="res://Timer2.gd" id="10_xvq0q"]
 [ext_resource type="Texture2D" uid="uid://b6pwdqu8xfu4j" path="res://sprites/icons/community.png" id="11_s281x"]
 [ext_resource type="Texture2D" uid="uid://cuixkg3xwlrxl" path="res://sprites/icons/leaderboard.png" id="12_w52qy"]
+[ext_resource type="Texture2D" uid="uid://cmltiowasprwb" path="res://sprites/icons/2.png" id="14_0e723"]
+[ext_resource type="Texture2D" uid="uid://cbnahbmf1eknu" path="res://sprites/icons/3.png" id="15_6ob20"]
+[ext_resource type="Texture2D" uid="uid://btdydkfxhjmdh" path="res://sprites/icons/4.png" id="16_lf81x"]
+[ext_resource type="Texture2D" uid="uid://bosik8e05l5by" path="res://sprites/icons/5.png" id="17_wnj7u"]
+[ext_resource type="Texture2D" uid="uid://b7y1hffqowf7q" path="res://sprites/icons/6.png" id="18_y2oyd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4u7cv"]
 size = Vector2(256, 350)
@@ -111,7 +117,17 @@ position = Vector2(110, 23)
 shape = SubResource("RectangleShape2D_jhjsa")
 shape_centered = false
 
+[node name="Label" type="Label" parent="Profile"]
+offset_left = 78.0
+offset_top = 30.0
+offset_right = 2328.0
+offset_bottom = 74.0
+text = "     Level 7"
+
 [node name="Avatar" type="Sprite2D" parent="Profile"]
+position = Vector2(35, 41)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("6_kjmxx")
 
 [node name="Step_counter" type="Panel" parent="."]
 offset_top = 123.0
@@ -182,9 +198,61 @@ position = Vector2(279, 300)
 scale = Vector2(0.559167, 0.5775)
 texture = ExtResource("12_w52qy")
 
+[node name="Panel2" type="Panel" parent="."]
+visible = false
+offset_right = 540.0
+offset_bottom = 512.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel2"]
+position = Vector2(95, 89)
+scale = Vector2(0.195313, 0.189453)
+texture = ExtResource("6_kjmxx")
+
+[node name="Label" type="Label" parent="Panel2"]
+layout_mode = 0
+offset_left = 260.0
+offset_top = 22.0
+offset_right = 511.0
+offset_bottom = 123.0
+text = "Ayush
+Level 7
+exp(799/1000)
+"
+
+[node name="Sprite2D2" type="Sprite2D" parent="Panel2"]
+position = Vector2(70, 268)
+scale = Vector2(0.2, 0.232)
+texture = ExtResource("6_kjmxx")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Panel2"]
+position = Vector2(260, 270)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("14_0e723")
+
+[node name="Sprite2D4" type="Sprite2D" parent="Panel2"]
+position = Vector2(459, 282)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("15_6ob20")
+
+[node name="Sprite2D5" type="Sprite2D" parent="Panel2"]
+position = Vector2(70, 414)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("16_lf81x")
+
+[node name="Sprite2D6" type="Sprite2D" parent="Panel2"]
+position = Vector2(259, 415)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("17_wnj7u")
+
+[node name="Sprite2D7" type="Sprite2D" parent="Panel2"]
+position = Vector2(459, 413)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("18_y2oyd")
+
 [connection signal="released" from="HBoxContainer/Panel/Shop" to="." method="_on_shop_released"]
 [connection signal="released" from="HBoxContainer/Panel2/Home" to="." method="_on_home_released"]
 [connection signal="released" from="HBoxContainer/Panel3/Inventory" to="." method="_on_inventory_released"]
+[connection signal="released" from="Profile/TouchScreenButton" to="." method="_on_touch_screen_button_released"]
 [connection signal="button_up" from="water" to="water" method="_on_button_up"]
 [connection signal="timeout" from="Timer" to="Timer" method="_on_timeout"]
 [connection signal="button_up" from="commute" to="commute" method="_on_button_up"]

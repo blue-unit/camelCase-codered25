@@ -1,4 +1,4 @@
-[gd_scene load_steps=80 format=3 uid="uid://ctnaa2g2gv2b8"]
+[gd_scene load_steps=82 format=3 uid="uid://ctnaa2g2gv2b8"]
 
 [ext_resource type="Texture2D" uid="uid://dji68d6rvfxyv" path="res://sprites/tiles/0.png" id="1_lnq18"]
 [ext_resource type="Script" path="res://Camera2D.gd" id="1_wpa1w"]
@@ -320,6 +320,12 @@ sources/34 = SubResource("TileSetAtlasSource_qgss6")
 sources/35 = SubResource("TileSetAtlasSource_k2cso")
 sources/36 = SubResource("TileSetAtlasSource_u2l7r")
 
+[sub_resource type="Environment" id="Environment_hx68a"]
+background_mode = 1
+background_color = Color(0.282353, 0.47451, 0.576471, 1)
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_ppwh0"]
+
 [node name="Main" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -353,3 +359,7 @@ visible = false
 visible = false
 
 [node name="Basic UI" parent="." instance=ExtResource("25_4g01e")]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_hx68a")
+camera_attributes = SubResource("CameraAttributesPractical_ppwh0")

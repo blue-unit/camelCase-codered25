@@ -1,7 +1,6 @@
-[gd_scene load_steps=82 format=3 uid="uid://ctnaa2g2gv2b8"]
+[gd_scene load_steps=81 format=3 uid="uid://ctnaa2g2gv2b8"]
 
 [ext_resource type="Texture2D" uid="uid://dji68d6rvfxyv" path="res://sprites/tiles/0.png" id="1_lnq18"]
-[ext_resource type="Script" path="res://Camera2D.gd" id="1_wpa1w"]
 [ext_resource type="PackedScene" uid="uid://btpieedxfv8tm" path="res://ui.tscn" id="2_52t6n"]
 [ext_resource type="Texture2D" uid="uid://bgbo56fynqcpi" path="res://sprites/tiles/9.png" id="2_75q33"]
 [ext_resource type="Script" path="res://TileMap.gd" id="3_28qbn"]
@@ -333,7 +332,6 @@ anchor_mode = 0
 position_smoothing_enabled = true
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
-script = ExtResource("1_wpa1w")
 
 [node name="saver" type="Node" parent="."]
 script = ExtResource("4_i2b7t")

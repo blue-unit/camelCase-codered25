@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://dx1itp3kt04w3"]
+[gd_scene load_steps=28 format=3 uid="uid://dx1itp3kt04w3"]
 
 [ext_resource type="Script" path="res://UI.gd" id="1_wqcf6"]
 [ext_resource type="Texture2D" uid="uid://bqlc1j0rbnpxr" path="res://sprites/icons/shop.png" id="2_3wub4"]
@@ -19,13 +19,8 @@
 [ext_resource type="Script" path="res://disc.gd" id="15_o3gwr"]
 [ext_resource type="Texture2D" uid="uid://4i0b0tsk27if" path="res://sprites/icons/whatsapp.png" id="16_1rcs4"]
 [ext_resource type="Texture2D" uid="uid://btdydkfxhjmdh" path="res://sprites/icons/4.png" id="16_lf81x"]
-[ext_resource type="Script" path="res://what.gd" id="17_cbjs2"]
 [ext_resource type="Texture2D" uid="uid://bosik8e05l5by" path="res://sprites/icons/5.png" id="17_wnj7u"]
-[ext_resource type="Texture2D" uid="uid://b1wp2ea0uysaw" path="res://sprites/icons/instagram.png" id="18_ae8pn"]
 [ext_resource type="Texture2D" uid="uid://b7y1hffqowf7q" path="res://sprites/icons/6.png" id="18_y2oyd"]
-[ext_resource type="Script" path="res://inst.gd" id="19_p5f2u"]
-[ext_resource type="Texture2D" uid="uid://oonsoqtgos6d" path="res://sprites/icons/social-media.png" id="20_y6bd5"]
-[ext_resource type="Script" path="res://fb.gd" id="21_jy5s6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4u7cv"]
 size = Vector2(256, 350)
@@ -225,25 +220,6 @@ offset_top = 562.0
 offset_right = 506.0
 offset_bottom = 634.0
 icon = ExtResource("16_1rcs4")
-script = ExtResource("17_cbjs2")
-
-[node name="Button3" type="Button" parent="Panel"]
-layout_mode = 0
-offset_left = 296.0
-offset_top = 562.0
-offset_right = 368.0
-offset_bottom = 634.0
-icon = ExtResource("18_ae8pn")
-script = ExtResource("19_p5f2u")
-
-[node name="Button4" type="Button" parent="Panel"]
-layout_mode = 0
-offset_left = 157.0
-offset_top = 562.0
-offset_right = 229.0
-offset_bottom = 634.0
-icon = ExtResource("20_y6bd5")
-script = ExtResource("21_jy5s6")
 
 [node name="Panel2" type="Panel" parent="."]
 visible = false
@@ -306,6 +282,3 @@ texture = ExtResource("18_y2oyd")
 [connection signal="timeout" from="Timer2" to="Timer2" method="_on_timeout"]
 [connection signal="released" from="Community" to="." method="_on_community_released"]
 [connection signal="button_up" from="Panel/Button" to="Panel/Button" method="_on_button_up"]
-[connection signal="button_up" from="Panel/Button2" to="Panel/Button2" method="_on_button_up"]
-[connection signal="button_up" from="Panel/Button3" to="Panel/Button3" method="_on_button_up"]
-[connection signal="button_up" from="Panel/Button4" to="Panel/Button4" method="_on_button_up"]
